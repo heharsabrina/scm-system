@@ -71,14 +71,16 @@ public class Add_Supplier_Acc
       
       name = new JTextField();
       name.setBounds(1150, 380, 200, 30);
+      name.setFont(new Font("SanSerif", Font.PLAIN, 20));
       
       
       mail = new JTextField();
       mail.setBounds(1150, 480, 200, 30);
-      
+      mail.setFont(new Font("SanSerif", Font.PLAIN, 20));
 
       company = new JTextField();
       company.setBounds(1150, 580, 200, 30);
+      company.setFont(new Font("SanSerif", Font.PLAIN, 20));
       
       ImageIcon icon_1 = new ImageIcon("images/check-mark.png");
       ImageIcon icon_2 = new ImageIcon("images/cross.png");
@@ -87,7 +89,8 @@ public class Add_Supplier_Acc
       add.addActionListener(new ActionListener()
       {
          @Override
-         public void actionPerformed(ActionEvent e) {
+         public void actionPerformed(ActionEvent e)
+         {
             JOptionPane.showMessageDialog(null, "Supplier Account Created! Name: " + name.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
             frame.setVisible(false);
          }

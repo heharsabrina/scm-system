@@ -54,6 +54,7 @@ public class Search_Product
       
       id = new JTextField();
       id.setBounds(1150, 380, 200, 30);
+      id.setFont(new Font("SanSerif", Font.PLAIN, 20));
       
       ImageIcon icon_1 = new ImageIcon("images/check-mark.png");
       ImageIcon icon_2 = new ImageIcon("images/cross.png");
@@ -62,8 +63,9 @@ public class Search_Product
       search.addActionListener(new ActionListener()
       {
          @Override
-         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Product Details Available Quantity: Price: " + id.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+         public void actionPerformed(ActionEvent e)
+         {
+            JOptionPane.showMessageDialog(null, "Product Available" , "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
             frame.setVisible(false);
          }
       });
@@ -76,7 +78,6 @@ public class Search_Product
       //add.addActionListener(e -> new Purchase_Product());
 
   }
-
   private JButton createStyledButton(String text)
   {
       JButton button = new JButton(text);

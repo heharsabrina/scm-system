@@ -65,11 +65,13 @@ public class Purchase_Product
       
       id = new JTextField();
       id.setBounds(1150, 380, 200, 30);
+      id.setFont(new Font("SanSerif", Font.PLAIN, 20));
       
       
       quant = new JTextField();
       quant.setBounds(1150, 480, 200, 30);
-      
+      quant.setFont(new Font("SanSerif", Font.PLAIN, 20));
+
       ImageIcon icon_1 = new ImageIcon("images/check-mark.png");
       ImageIcon icon_2 = new ImageIcon("images/cross.png");
       
@@ -85,6 +87,7 @@ public class Purchase_Product
             frame.setVisible(false);
          }
       });
+      
       place_order.setBounds(980, 600, 130, 45);
       frame.add(idLabel);
       frame.add(quantLabel);
@@ -116,4 +119,5 @@ public class Purchase_Product
       button.setFocusable(false);
       return button;
   }
+
 }

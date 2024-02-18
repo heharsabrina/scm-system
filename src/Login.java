@@ -67,6 +67,8 @@ public class Login extends JFrame
         welcome.setForeground(Color.black);
         
         username = new JTextField(1000);
+        username.setFont(new Font("SanSerif", Font.PLAIN, 20));
+        
         username.addKeyListener(new KeyAdapter()
         {
             @Override
@@ -84,6 +86,7 @@ public class Login extends JFrame
         
         pass = new JPasswordField();
         pass.setBounds(950, 460, 200, 30);
+        pass.setFont(new Font("SanSerif", Font.PLAIN, 20));
         pass.setEchoChar('*'); //Set the placeholder character to asterisk
         add(pass);
 

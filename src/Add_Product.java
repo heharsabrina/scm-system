@@ -1,15 +1,3 @@
-/* 
-
-      JButton okButton = new JButton("Add");
-
-      okButton.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
-            // Perform actions when the button is clicked
-            JOptionPane.showMessageDialog(null, "Product Added!" + tf2.getText());
-            mainFrame.setVisible(false);
-         }
-      });
-*/
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -90,36 +78,51 @@ public class Add_Product
       
       id = new JTextField();
       id.setBounds(1150, 380, 200, 30);
+      id.setFont(new Font("SanSerif", Font.PLAIN, 20));
       
       
       name = new JTextField();
       name.setBounds(1150, 480, 200, 30);
-      
+      name.setFont(new Font("SanSerif", Font.PLAIN, 20));
 
       price = new JTextField();
       price.setBounds(1150, 580, 200, 30);
+      price.setFont(new Font("SanSerif", Font.PLAIN, 20));
 
       desc = new JTextField();
       desc.setBounds(1150, 680, 200, 30);
+      desc.setFont(new Font("SanSerif", Font.PLAIN, 20));
       
       ImageIcon icon_1 = new ImageIcon("images/check-mark.png");
       ImageIcon icon_2 = new ImageIcon("images/cross.png");
 
       JButton add = createStyledButton("Add");
-      add.addActionListener(new ActionListener()
+      add.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e)
       {
-         @Override
-         public void actionPerformed(ActionEvent e)
+         try
          {
-            JOptionPane.showMessageDialog(null, "Product Added!" + name.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+            // Create a new Product instance and populate it with the input fields
+            Product product = new Product(null, null, 0, null);
+            product.setId(id.getText());
+            product.setName(name.getText());
+            product.setPrice(Double.parseDouble(price.getText()));
+            product.setDescription(desc.getText());
+            // Pass the product to the Search_Product program
+            // Assuming Search_Product has a method called addProduct(Product product)
+            //Purchase_Product.addProduct(product);
+            JOptionPane.showMessageDialog(null, "Product Added: " + product.getName(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
             frame.setVisible(false);
-            /*else
-            {
-               JOptionPane.showMessageDialog(null, "Product Added!" + name.getText(), null, JOptionPane.ERROR_MESSAGE);
-
-            }*/
          }
-      });
+         catch (NumberFormatException ex)
+         {
+            JOptionPane.showMessageDialog(null, "Invalid price format. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+         }
+      }
+   });
+
+   
 
       
       add.setBounds(980, 800, 130, 45);
