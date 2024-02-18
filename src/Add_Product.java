@@ -102,14 +102,22 @@ public class Add_Product
       desc = new JTextField();
       desc.setBounds(1150, 680, 200, 30);
       
-      
+      ImageIcon icon_1 = new ImageIcon("images/check-mark.png");
+      ImageIcon icon_2 = new ImageIcon("images/cross.png");
+
       JButton add = createStyledButton("Add");
       add.addActionListener(new ActionListener()
       {
          @Override
-         public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Product Added!" + name.getText());
+         public void actionPerformed(ActionEvent e)
+         {
+            JOptionPane.showMessageDialog(null, "Product Added!" + name.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
             frame.setVisible(false);
+            /*else
+            {
+               JOptionPane.showMessageDialog(null, "Product Added!" + name.getText(), null, JOptionPane.ERROR_MESSAGE);
+
+            }*/
          }
       });
 

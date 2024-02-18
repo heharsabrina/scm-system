@@ -97,6 +97,8 @@ public class Login extends JFrame
         
     }
 
+    //ImageIcon icon_1 = new ImageIcon("images/check-mark.png");
+    ImageIcon icon_2 = new ImageIcon("images/cross.png");
     public void submitActionPerformed(ActionEvent evt)
 	{
         //This method is invoked when the login button is clicked. It checks if the entered username and password match the expected values ("admin" for both in this case). If the login credentials are correct, it hides the login window and opens a new frame (Frame2new). Otherwise, it displays an error message.
@@ -107,7 +109,7 @@ public class Login extends JFrame
         }
 		else 
 		{
-            JOptionPane.showMessageDialog(null, "Invalid password"); //The null argument indicates that the dialog should be centered on the screen
+            JOptionPane.showMessageDialog(null, "Invalid password", "SCM", JOptionPane.INFORMATION_MESSAGE, icon_2); //The null argument indicates that the dialog should be centered on the screen
         }
     }
 }

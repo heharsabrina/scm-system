@@ -70,7 +70,8 @@ public class Purchase_Product
       quant = new JTextField();
       quant.setBounds(1150, 480, 200, 30);
       
-      
+      ImageIcon icon_1 = new ImageIcon("images/check-mark.png");
+      ImageIcon icon_2 = new ImageIcon("images/cross.png");
       
       JButton place_order = createStyledButton("Place Order");
       place_order.addActionListener(new ActionListener()
@@ -80,7 +81,7 @@ public class Purchase_Product
          {
             // Perform actions when the button is clicked
             // For example, update the product quantity in a local data structure
-            JOptionPane.showMessageDialog(null, "Product Ordered! Amount: " + quant.getText());
+            JOptionPane.showMessageDialog(null, "Product Ordered! Amount: " + quant.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
             frame.setVisible(false);
          }
       });

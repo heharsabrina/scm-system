@@ -55,13 +55,15 @@ public class Search_Product
       id = new JTextField();
       id.setBounds(1150, 380, 200, 30);
       
-     
+      ImageIcon icon_1 = new ImageIcon("images/check-mark.png");
+      ImageIcon icon_2 = new ImageIcon("images/cross.png");
+
       JButton search = createStyledButton("Search");
       search.addActionListener(new ActionListener()
       {
          @Override
          public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Product Details Available Quantity: Price: " + id.getText());
+            JOptionPane.showMessageDialog(null, "Product Details Available Quantity: Price: " + id.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
             frame.setVisible(false);
          }
       });

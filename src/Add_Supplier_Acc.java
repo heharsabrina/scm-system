@@ -80,13 +80,15 @@ public class Add_Supplier_Acc
       company = new JTextField();
       company.setBounds(1150, 580, 200, 30);
       
-      
+      ImageIcon icon_1 = new ImageIcon("images/check-mark.png");
+      ImageIcon icon_2 = new ImageIcon("images/cross.png");
+
       JButton add = createStyledButton("Add");
       add.addActionListener(new ActionListener()
       {
          @Override
          public void actionPerformed(ActionEvent e) {
-            JOptionPane.showMessageDialog(null, "Supplier Account Created! Name: " + name.getText());
+            JOptionPane.showMessageDialog(null, "Supplier Account Created! Name: " + name.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
             frame.setVisible(false);
          }
       });
