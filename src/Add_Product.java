@@ -36,13 +36,7 @@ public class Add_Product
    public Add_Product()
    {
       prepareGUI();
-      //showButtonDemo();//Configure and add buttons for various functionalities
-   }
-
-   public static void main(String[] args)
-   {
-      Add_Product swingControlDemo = new Add_Product();
-      swingControlDemo.showButtonDemo();
+      showButtonDemo();//Configure and add buttons for various functionalities
    }
    void prepareGUI()
    {
