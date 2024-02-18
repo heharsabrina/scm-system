@@ -1,66 +1,4 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-
-public class Add_Product {
-
-   private JFrame mainFrame;
-   private JLabel headerLabel;
-   private JPanel controlPanel;
-   private JLabel name, price, quantity, qt;
-   GridLayout experimentLayout = new GridLayout(0, 2);
-
-   Add_Product() {
-      prepareGUI();
-   }
-
-   public static void main(String[] args) {
-      Add_Product swingControlDemo = new Add_Product();
-      swingControlDemo.showButtonDemo();
-   }
-
-   private void prepareGUI() {
-      mainFrame = new JFrame("Add Product Details");
-      mainFrame.setSize(700, 500);
-      mainFrame.setLayout(new GridLayout(3, 1));
-      
-
-      mainFrame.getContentPane().setBackground(Color.green);
-
-      mainFrame.addWindowListener(new WindowAdapter() {
-         public void windowClosing(WindowEvent windowEvent) {
-            mainFrame.setVisible(false);
-         }
-      });
-      headerLabel = new JLabel("", JLabel.CENTER);
-
-      controlPanel = new JPanel();
-      controlPanel.setLayout(new FlowLayout());
-
-      mainFrame.add(headerLabel);
-      mainFrame.add(controlPanel);
-      mainFrame.setVisible(true);
-   }
-
-   public void showButtonDemo() {
-      headerLabel.setText("Supply Chain Management System");
-      headerLabel.setFont(new Font(null, Font.BOLD, 27));
-
-      name = new JLabel("Enter Product Id");
-      JTextField tf2 = new JTextField();
-      tf2.setSize(100, 40);
-
-      price = new JLabel("Enter Product Name");
-      JTextField tf3 = new JTextField();
-      tf3.setSize(100, 40);
-
-      quantity = new JLabel("Enter Quantity");
-      JTextField tf4 = new JTextField();
-      tf4.setSize(100, 40);
-
-      qt = new JLabel("Enter Price");
-      JTextField tf5 = new JTextField();
-      tf4.setSize(100, 40);
+/* 
 
       JButton okButton = new JButton("Add");
 
@@ -71,23 +9,150 @@ public class Add_Product {
             mainFrame.setVisible(false);
          }
       });
+*/
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
 
-      JPanel jp = new JPanel(null);
-      jp.add(name);
-      jp.add(tf2);
-      jp.add(price);
-      jp.add(tf3);
-      jp.add(quantity);
-      jp.add(tf4);
-      jp.add(qt);
-      jp.add(tf5);
+public class Add_Product
+{
+   private JFrame frame;
+   private ImageIcon icon;
 
-      jp.setSize(700, 700);
-      jp.setLayout(experimentLayout);
-      controlPanel.add(jp);
-      jp.add(okButton);
+   private JLabel headerLabel;
+   private JLabel imageLabel;
 
-      mainFrame.setLocationRelativeTo(null);
-      mainFrame.setVisible(true);
+   private JLabel idLabel;
+   private JLabel nameLabel;
+   private JLabel priceLabel;
+   private JLabel descLabel;
+
+   private JTextField name;
+   private JTextField id;
+   private JTextField price;
+   private JTextField desc;
+   
+   public Add_Product()
+   {
+      prepareGUI();
+      //showButtonDemo();//Configure and add buttons for various functionalities
    }
+
+   public static void main(String[] args)
+   {
+      Add_Product swingControlDemo = new Add_Product();
+      swingControlDemo.showButtonDemo();
+   }
+   void prepareGUI()
+   {
+      frame = new JFrame("SCM");
+      icon = new ImageIcon("images/icon.png");
+      frame.setIconImage(icon.getImage()); //Change icon of the image
+      frame.setSize(1920, 1080);
+      frame.setLayout(null); //This sets the layout manager for the frame. A layout manager is responsible for arranging components within a container. Here, we're using a GridLayout with 3 rows and 1 column. This means that components added to the frame will be arranged in three vertical sections.
+      frame.getContentPane().setBackground(new Color(225, 243, 252));
+
+      headerLabel = new JLabel("Add a Product", JLabel.CENTER);
+      headerLabel.setFont(new Font("Serif", Font.PLAIN, 75));
+      //headerLabel.setForeground(new Color(0, 74, 173));
+      headerLabel.setForeground(Color.black);
+      headerLabel.setBounds(450, 50, 1250, 150);
+
+      // statusLabel = new JLabel("dhd",JLabel.WEST);
+      // statusLabel.setBackground(Color.BLUE);
+      // statusLabel.setSize(350,300);
+      imageLabel = new JLabel(new ImageIcon("images/menu_bg.png"));
+      imageLabel.setBounds(-100, -350, 550, 2000);
+      frame.add(imageLabel);
+      frame.add(headerLabel);
+   }
+
+   public void showButtonDemo()
+   {
+      idLabel = new JLabel();
+      idLabel.setText("Product ID");
+      idLabel.setBounds(760, 350, 150, 100);
+      idLabel.setFont(new Font("SanSerif", Font.PLAIN, 30));
+      idLabel.setForeground(Color.black);
+      
+
+      nameLabel = new JLabel("Name of the Product");
+      nameLabel.setBounds(760, 450, 300, 100);
+      nameLabel.setFont(new Font("SanSerif", Font.PLAIN, 30));
+      nameLabel.setForeground(Color.black);
+      
+
+      priceLabel = new JLabel("Price");
+      priceLabel.setBounds(760, 550, 350, 100);
+      priceLabel.setFont(new Font("SanSerif", Font.PLAIN, 30));
+      priceLabel.setForeground(Color.black);
+
+      descLabel = new JLabel("Description");
+      descLabel.setBounds(760, 650, 350, 100);
+      descLabel.setFont(new Font("SanSerif", Font.PLAIN, 30));
+      descLabel.setForeground(Color.black);
+      
+      
+      id = new JTextField();
+      id.setBounds(1150, 380, 200, 30);
+      
+      
+      name = new JTextField();
+      name.setBounds(1150, 480, 200, 30);
+      
+
+      price = new JTextField();
+      price.setBounds(1150, 580, 200, 30);
+
+      desc = new JTextField();
+      desc.setBounds(1150, 680, 200, 30);
+      
+      
+      JButton add = createStyledButton("Add");
+      add.addActionListener(new ActionListener()
+      {
+         @Override
+         public void actionPerformed(ActionEvent e) {
+            JOptionPane.showMessageDialog(null, "Product Added!" + name.getText());
+            frame.setVisible(false);
+         }
+      });
+
+      
+      add.setBounds(980, 800, 130, 45);
+      frame.add(idLabel);
+      frame.add(nameLabel);
+      frame.add(priceLabel);
+      frame.add(descLabel);
+
+      frame.add(id);
+      frame.add(name);
+      frame.add(price);
+      frame.add(desc);
+
+      frame.add(add);
+      frame.setVisible(true);
+      
+      //add.addActionListener(e -> new Purchase_Product());
+
+  }
+
+  private JButton createStyledButton(String text)
+  {
+      JButton button = new JButton(text);
+      //button.setFont(new Font("SanSerif", Font.PLAIN, 25));
+      button.setFont(new Font("SanSerif", Font.BOLD, 22));
+
+      button.setHorizontalTextPosition(JButton.CENTER);
+      button.setVerticalTextPosition(JButton.TOP);
+      button.setIconTextGap(15);
+      button.setBorder(BorderFactory.createLineBorder(Color.black, 2));
+      button.setBackground(Color.white);
+      //button.setForeground(new Color(0, 148, 218));
+      button.setForeground(Color.black);
+
+      button.setFocusable(false);
+      return button;
+  }
 }
