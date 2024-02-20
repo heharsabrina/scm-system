@@ -65,8 +65,19 @@ public class Search_Product
          @Override
          public void actionPerformed(ActionEvent e)
          {
-            JOptionPane.showMessageDialog(null, "Product Available" + Product.getId() +Product.getName() +Product.getDescription(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
-            frame.setVisible(false);
+            String enteredProductId = id.getText();
+
+                // Check if the entered product ID exists in the Product class
+            if(!enteredProductId.equals(Product.getId()))
+            {
+               JOptionPane.showMessageDialog(null, "Product ID does not exist!", "SCM", JOptionPane.ERROR_MESSAGE, icon_2);
+            }
+            else
+            {
+                    // Product ID exists, display product details
+                    JOptionPane.showMessageDialog(null, "Product Available\nProduct ID: " + Product.getId() + "\nName: " + Product.getName() + "\nDescription: " + Product.getDescription(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+                    frame.setVisible(false);
+            }
          }
       });
       search.setBounds(980, 500, 130, 45);

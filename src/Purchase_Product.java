@@ -76,17 +76,42 @@ public class Purchase_Product
       ImageIcon icon_2 = new ImageIcon("images/cross.png");
       
       JButton place_order = createStyledButton("Place Order");
-      place_order.addActionListener(new ActionListener()
+      // ... (your existing code)
+
+   place_order.addActionListener(new ActionListener()
+   {
+      @Override
+      public void actionPerformed(ActionEvent e)
       {
-         @Override
-         public void actionPerformed(ActionEvent e) 
+         String enteredProductId = id.getText();
+
+       // Check if the entered product ID exists in the Product class
+         if (!enteredProductId.equals(Product.getId()))
          {
-            // Perform actions when the button is clicked
-            // For example, update the product quantity in a local data structure
-            JOptionPane.showMessageDialog(null, "Product Ordered! Amount: " + (Double.parseDouble(quant.getText()) * Product.getPrice()), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
-            frame.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Product ID does not exist. Please enter a valid product ID.", "SCM", JOptionPane.ERROR_MESSAGE, icon_2);
          }
-      });
+         else
+         {
+           // Product ID exists, proceed with the order
+           try
+           {
+               double quantity = Double.parseDouble(quant.getText());
+               double orderAmount = quantity * Product.getPrice();
+
+               // Perform actions when the button is clicked
+               // For example, update the product quantity in a local data structure
+               JOptionPane.showMessageDialog(null, "Product Ordered! Amount: " + orderAmount, "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+               frame.setVisible(false);
+            }
+            catch (NumberFormatException ex)
+            {
+               JOptionPane.showMessageDialog(null, "Invalid quantity format. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE, icon_2);
+            }
+         }
+      }
+   });
+
+
       
       place_order.setBounds(980, 600, 130, 45);
       frame.add(idLabel);
