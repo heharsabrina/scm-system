@@ -1,29 +1,29 @@
 // Product.java
 public class Product
 {
-    private String id ;
+    private static String id ;
     private String name;
-    private double price;
+    private static double price;
     private String description;
 
     // Constructor
     public Product(String id, String name, double price, String description)
     {
-        this.id = id;
+        Product.id = id;
         this.name = name;
-        this.price = price;
+        Product.price = price;
         this.description = description;
     }
 
     // Getters and setters
-    public String getId()
+    public static String getId()
     {
         return id;
     }
 
     public void setId(String id)
     {
-        this.id = id;
+        Product.id = id;
     }
 
     public String getName()
@@ -36,14 +36,14 @@ public class Product
         this.name = name;
     }
 
-    public double getPrice()
+    public static double getPrice()
     {
         return price;
     }
 
     public void setPrice(double price)
     {
-        this.price = price;
+        Product.price = price;
     }
 
     public String getDescription()

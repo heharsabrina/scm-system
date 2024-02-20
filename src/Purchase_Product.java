@@ -83,7 +83,7 @@ public class Purchase_Product
          {
             // Perform actions when the button is clicked
             // For example, update the product quantity in a local data structure
-            JOptionPane.showMessageDialog(null, "Product Ordered! Amount: " + quant.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+            JOptionPane.showMessageDialog(null, "Product Ordered! Amount: " + (Double.parseDouble(quant.getText()) * Product.getPrice()), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
             frame.setVisible(false);
          }
       });

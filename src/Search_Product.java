@@ -65,7 +65,7 @@ public class Search_Product
          @Override
          public void actionPerformed(ActionEvent e)
          {
-            JOptionPane.showMessageDialog(null, "Product Available" , "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+            JOptionPane.showMessageDialog(null, "Product Available"+Product.getId() , "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
             frame.setVisible(false);
          }
       });
