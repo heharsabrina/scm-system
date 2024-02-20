@@ -108,7 +108,7 @@ public class Login extends JFrame
         if (username.getText().equals("sjec") && new String(pass.getPassword()).equals("123456")) //The conversion to String is only needed for the password because getPassword() returns a character array
         {
             this.setVisible(false); //This line hides the current login window 
-            Menu m = new Menu();
+            new Menu();
         }
 		else 
 		{

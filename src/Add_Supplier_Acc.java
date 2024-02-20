@@ -91,10 +91,22 @@ public class Add_Supplier_Acc
          @Override
          public void actionPerformed(ActionEvent e)
          {
-            JOptionPane.showMessageDialog(null, "Supplier Account Created! Name: " + name.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
-            frame.setVisible(false);
+            if(name.getText().isEmpty() || mail.getText().isEmpty() || company.getText().isEmpty())
+            {
+               JOptionPane.showMessageDialog(null, "Please fill in all the fields", "Error", JOptionPane.ERROR_MESSAGE, icon_2);
+            }
+            else if(!mail.getText().contains("@"))
+            {
+               JOptionPane.showMessageDialog(null, "Invalid email address. Please enter a valid email ID.", "Error", JOptionPane.ERROR_MESSAGE, icon_2);
+            }
+            else
+            {
+               JOptionPane.showMessageDialog(null, "Supplier Account Created!\nName: " + name.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+               frame.setVisible(false);
+            }
          }
       });
+     
       add.setBounds(980, 700, 130, 45);
       frame.add(nameLabel);
       frame.add(mailLabel);

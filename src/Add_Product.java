@@ -102,7 +102,7 @@ public class Add_Product
          @Override
          public void actionPerformed(ActionEvent e)
          {
-            if (id.getText().isEmpty() || name.getText().isEmpty() || price.getText().isEmpty() || desc.getText().isEmpty())
+            if(id.getText().isEmpty() || name.getText().isEmpty() || price.getText().isEmpty() || desc.getText().isEmpty())
             {
                JOptionPane.showMessageDialog(null, "Please fill in all the fields", "Error", JOptionPane.ERROR_MESSAGE, icon_2);
             }
