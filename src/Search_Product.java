@@ -66,16 +66,21 @@ public class Search_Product
          public void actionPerformed(ActionEvent e)
          {
             String enteredProductId = id.getText();
-
-                // Check if the entered product ID exists in the Product class
-            if(!enteredProductId.equals(Product.getId()))
+            if(id.getText().isEmpty())
             {
-               JOptionPane.showMessageDialog(null, "Product ID does not exist!", "SCM", JOptionPane.ERROR_MESSAGE, icon_2);
+               JOptionPane.showMessageDialog(null, "Please fill in all the fields", "Error", JOptionPane.ERROR_MESSAGE, icon_2);
             }
+                // Check if the entered product ID exists in the Product class
+            else if(!enteredProductId.equals(Product.getId()))
+            {
+               JOptionPane.showMessageDialog(null, "Product ID does not exist. Please enter a valid product ID.", "SCM", JOptionPane.ERROR_MESSAGE, icon_2);
+            }
+            
+            
             else
             {
                     // Product ID exists, display product details
-                    JOptionPane.showMessageDialog(null, "Product Available\nProduct ID: " + Product.getId() + "\nName: " + Product.getName() + "\nDescription: " + Product.getDescription(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+                    JOptionPane.showMessageDialog(null, "Product Available!\n\nProduct ID: " + Product.getId() + "\nName: " + Product.getName() + "\nPrice: " + Product.getPrice() + "\nDescription: " + Product.getDescription(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
                     frame.setVisible(false);
             }
          }

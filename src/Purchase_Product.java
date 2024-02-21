@@ -84,12 +84,16 @@ public class Purchase_Product
       public void actionPerformed(ActionEvent e)
       {
          String enteredProductId = id.getText();
-
+         if(id.getText().isEmpty() || quant.getText().isEmpty())
+         {
+            JOptionPane.showMessageDialog(null, "Please fill in all the fields", "Error", JOptionPane.ERROR_MESSAGE, icon_2);
+         }
        // Check if the entered product ID exists in the Product class
-         if (!enteredProductId.equals(Product.getId()))
+         else if (!enteredProductId.equals(Product.getId()))
          {
             JOptionPane.showMessageDialog(null, "Product ID does not exist. Please enter a valid product ID.", "SCM", JOptionPane.ERROR_MESSAGE, icon_2);
          }
+         
          else
          {
            // Product ID exists, proceed with the order
@@ -100,7 +104,7 @@ public class Purchase_Product
 
                // Perform actions when the button is clicked
                // For example, update the product quantity in a local data structure
-               JOptionPane.showMessageDialog(null, "Product Ordered! Amount: " + orderAmount, "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+               JOptionPane.showMessageDialog(null, "Product Ordered!\n\nAmount to be paid: " + orderAmount + "\n\nDetails of the Product:\nProduct ID: " + Product.getId() + "\nName: " + Product.getName() + "\nDescription: " + Product.getDescription() + "\n\nThe product will be delivered within 3 - 4 working days", "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
                frame.setVisible(false);
             }
             catch (NumberFormatException ex)

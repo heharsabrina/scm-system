@@ -51,9 +51,10 @@ public class About
       scm_process.setBounds(760, 250, 600, 384);
       scm_process.setBorder(BorderFactory.createLineBorder(Color.black, 2));
       frame.add(scm_process);
-
+      
+      
       title = new JLabel();
-      title.setText("A supply chain management system");
+      title.setText("Supply chain management (SCM) is the management of the flow of goods and services.");
       title.setBounds(560, 650, 2000, 100);
       title.setFont(new Font("SanSerif", Font.PLAIN, 30));
       title.setForeground(Color.black);

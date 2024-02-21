@@ -97,11 +97,11 @@ public class Add_Supplier_Acc
             }
             else if(!mail.getText().contains("@"))
             {
-               JOptionPane.showMessageDialog(null, "Invalid email address. Please enter a valid email ID.", "Error", JOptionPane.ERROR_MESSAGE, icon_2);
+               JOptionPane.showMessageDialog(null, "Please enter a valid email ID", "Error", JOptionPane.ERROR_MESSAGE, icon_2);
             }
             else
             {
-               JOptionPane.showMessageDialog(null, "Supplier Account Created!\nName: " + name.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+               JOptionPane.showMessageDialog(null, "Supplier Account Created!\n\nName: " + name.getText() + "\nEmail ID: " + mail.getText() + "\nCompany: " + company.getText(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
                frame.setVisible(false);
             }
          }

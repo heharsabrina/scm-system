@@ -119,12 +119,12 @@ public class Add_Product
                   // Pass the product to the Search_Product program
                   // Assuming Search_Product has a method called addProduct(Product product)
                   //Purchase_Product.addProduct(product);
-                  JOptionPane.showMessageDialog(null, "Product Added!\n\nProduct ID: " + Product.getId() + "\nName: " + Product.getName(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
+                  JOptionPane.showMessageDialog(null, "Product Added!\n\nProduct ID: " + Product.getId() + "\nName: " + Product.getName() + "\nPrice: " + Product.getPrice() + "\nDescription: "+ Product.getDescription(), "SCM", JOptionPane.INFORMATION_MESSAGE, icon_1);
                   frame.setVisible(false);
                }
                catch (NumberFormatException ex)
                {
-                  JOptionPane.showMessageDialog(null, "Invalid price format. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE);
+                  JOptionPane.showMessageDialog(null, "Invalid price format. Please enter a valid number.", "Error", JOptionPane.ERROR_MESSAGE, icon_2);
                }
              }
          }
