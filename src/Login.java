@@ -11,6 +11,7 @@ public class Login extends JFrame
     JLabel background;
     JLabel headerLabel;
     JLabel welcome;
+    JLabel desc;
 
     JTextField username;
     JPasswordField pass;
@@ -84,11 +85,19 @@ public class Login extends JFrame
         add(username);
         add(welcome);
         
+        
         pass = new JPasswordField();
         pass.setBounds(950, 460, 200, 30);
         pass.setFont(new Font("SanSerif", Font.PLAIN, 20));
         pass.setEchoChar('*'); //Set the placeholder character to asterisk
         add(pass);
+
+        desc = new JLabel();
+        desc.setText("Developed by: Sabrina Hehar ( 4SO22CS135 )");
+        desc.setBounds(700, 900, 500, 100);
+        desc.setFont(new Font("SanSerif", Font.PLAIN, 25));
+        desc.setForeground(Color.gray);
+        add(desc);
 
         this.submit = new JButton("Login");
         this.submit.setBounds(890, 600, 130, 45);
