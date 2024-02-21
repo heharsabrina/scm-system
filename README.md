@@ -1,2 +1,2 @@
 # scm-system
-A supply chain management system which helps in the managing the flow of goods and servives, involving the storage of finished products and their movement from the producer to the consumer.
+A supply chain management system made using Java which helps in the managing the flow of goods and servives, involving the storage of finished products and their movement from the producer to the consumer.
