@@ -114,7 +114,7 @@ public class Login extends JFrame
     public void submitActionPerformed(ActionEvent evt)
 	{
         //This method is invoked when the login button is clicked. It checks if the entered username and password match the expected values ("admin" for both in this case). If the login credentials are correct, it hides the login window and opens a new frame (Frame2new). Otherwise, it displays an error message.
-        if (username.getText().equals("sjec") && new String(pass.getPassword()).equals("123456")) //The conversion to String is only needed for the password because getPassword() returns a character array
+        if (username.getText().equals("sjec") && new String(pass.getPassword()).equals("1")) //The conversion to String is only needed for the password because getPassword() returns a character array
         {
             this.setVisible(false); //This line hides the current login window 
             new Menu();

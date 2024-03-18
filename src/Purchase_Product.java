@@ -32,7 +32,7 @@ public class Purchase_Product
       frame.setLayout(null); //This sets the layout manager for the frame. A layout manager is responsible for arranging components within a container. Here, we're using a GridLayout with 3 rows and 1 column. This means that components added to the frame will be arranged in three vertical sections.
       frame.getContentPane().setBackground(new Color(225, 243, 252));
 
-      headerLabel = new JLabel("Add a Supplier Account", JLabel.CENTER);
+      headerLabel = new JLabel("Purchase a Product", JLabel.CENTER);
       headerLabel.setFont(new Font("Serif", Font.PLAIN, 75));
       //headerLabel.setForeground(new Color(0, 74, 173));
       headerLabel.setForeground(Color.black);
